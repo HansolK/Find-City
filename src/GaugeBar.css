@@ -1,0 +1,12 @@
+.bar {
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+  width: 200px;
+  background-color: lightslategray;
+}
+
+.innerbar {
+  height: 100%;
+  transition: width 1s;
+}

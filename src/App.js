@@ -1,25 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import FindCity from "./FindCity.js";
+import CityDetail from "./CityDetail.js"
+
+import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      url: ""
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <div className="heading">
+          <h1>City Life Finder</h1>
+          <h3>Have to move to another city? But you are not sure what it is going to be linke? Simply enter the city that you want to find out!</h3>
+        </div>
+        <FindCity
+          onSelect={url => {
+            this.setState({
+              url: url
+            });
+          }}
+        />
+
+        <CityDetail url={this.state.url} />
       </div>
     );
   }

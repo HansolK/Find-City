@@ -1,0 +1,39 @@
+.findCity {
+  position: relative;
+  max-width: 60%;
+  margin: 0px auto;
+}
+
+
+.findCity_form {
+  display: flex;
+  margin: 10px;
+}
+
+.findCity_form input{
+  flex: 1;
+  padding: 5px;
+  margin-right: 10px;
+}
+.list_container {
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 10px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.list_container ul {
+  padding: 0;
+}
+.list_container li {
+  list-style: none;
+  padding: 10px;
+}
+
+.list_container li:hover {
+  background-color: bisque;
+  cursor: pointer;
+}
