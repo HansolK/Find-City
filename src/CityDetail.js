@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import GaugeBar from './GaugeBar'
 import './CityDetail.css'
+
 class CityDetail extends Component {
   constructor(props) {
     super(props)

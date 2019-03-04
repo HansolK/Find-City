@@ -7,10 +7,14 @@ class FindCity extends Component {
     this.state = {
       input: "",
       cities: [],
+      selectedItem: 0
     };
   }
 
   GetCity(url) {
+    this.setState({
+      selectedItem: 0
+    })
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -22,6 +26,7 @@ class FindCity extends Component {
   }
 
   render() {
+    
     return (
       <div className="findCity">
         <form
@@ -34,11 +39,22 @@ class FindCity extends Component {
             this.props.onSelect(this.state.cities[0]._links["city:item"].href)
               this.setState({
                 cities: [],
-                input: this.state.cities[0].matching_full_name
+                input: this.state.cities[this.state.selectedItem].matching_full_name
               });
           }}
         >
           <input
+            onKeyDown={(e) => {
+              if(e.key === "ArrowDown" && this.state.selectedItem < this.state.cities.length-1) {
+                this.setState({
+                  selectedItem: this.state.selectedItem + 1
+                })
+              } else if(e.key === "ArrowUp" && this.state.selectedItem > 0) {
+                this.setState({
+                  selectedItem: this.state.selectedItem - 1
+                })
+              }
+            }}
             value={this.state.input}
             onChange={event => {
               this.setState({
@@ -54,9 +70,15 @@ class FindCity extends Component {
         {this.state.cities.length > 0 && (
           <div className="list_container">
             <ul>
-              {this.state.cities.map(city => {
+              {this.state.cities.map((city, index) => {
                 return (
-                  <li
+                  <li 
+                  onKeydown={(e) => {
+                    if(e.key === "enter") {
+
+                    }
+                  }}
+                  className={index === this.state.selectedItem? "changeBackground": ""}
                     onClick={e => {
                       this.props.onSelect(city._links["city:item"].href)
                       this.setState({
@@ -78,3 +100,4 @@ class FindCity extends Component {
 }
 
 export default FindCity;
+
