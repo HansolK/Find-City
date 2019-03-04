@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Click here to have a look!
+## FindCity App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+To view the website, click [here](https://hansolk.github.io/Find-City)!
+
+## Description
+Have you wondered what it is going to be like living in a new city? This website provides information with graphs you need to know before you move or visit. 
 
 ## Available Scripts
 
