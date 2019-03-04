@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Click here to have a look!
+## FindCity App
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
+Click [here](https://hansolk.github.io/Find-City) to have a look!
+
+## Approach
+
 
 ## Available Scripts
 
